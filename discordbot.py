@@ -13,7 +13,11 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return
-    if message.content == '_test':
+    if message.content[0] != prefix:
+        return
+    cmd = message.content.split()[0][1:]
+    args = message.content.split()[1:]
+    if cmd == 'test':
         await message.channel.send('**---Botは正常にインストールされています---**')
 
 client.run(token)
