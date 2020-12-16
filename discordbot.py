@@ -4,7 +4,7 @@ import os
 token = os.environ['bot_token']
 
 client = discord.Client()
-
+prefix = '_'
 @client.event
 async def on_ready():
     print('**---起動しました--**')
